@@ -1,0 +1,23 @@
+/*
+will override to all 
+*/
+.pull-right {
+    float: left !important;
+}
+.pull-left {
+    float: right!important;
+}
+.right {
+    right: unset;
+    left: 0;
+}
+.cart_info table tr td {
+    font-family: Vazir;
+}
+.nav-pills>li {
+    float: right;
+}
+
+.choose .nav-pills>li {
+    float: none;
+}
