@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -307,7 +306,7 @@
 						<!-- start: User Dropdown -->
 						<li class="dropdown">
 							<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-								<i class="halflings-icon white user"></i> Dennis Ji
+								<i class="halflings-icon white user"></i> {{ Session::get('admin_name') }}
 								<span class="caret"></span>
 							</a>
 							<ul class="dropdown-menu">
@@ -1042,7 +1041,7 @@
 	</footer>
 	
 	<!-- start: JavaScript-->
-	
+
 		<script src="{{asset('backend/js/jquery-1.9.1.min.js')}}"></script>
 	<script src="{{asset('backend/js/jquery-migrate-1.0.0.min.js')}}"></script>
 	
