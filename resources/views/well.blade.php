@@ -1,2 +1,2 @@
-
-		{{ admin }}
+      
+                   {{ $Category->category_name }}

@@ -66,6 +66,15 @@ class adminsController extends Controller
         return View ('admin.login');
     }
 
+    public function logout()
+    {   
+
+        Session::flush();
+        return view('admin.login');
+    }
+
+
+
     public function destroy($id)
     {
         //
