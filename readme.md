@@ -10,21 +10,13 @@
 ## Installation
 
 Development environment requirements :
-- [Docker](https://www.docker.com)
-- [Docker Compose](https://docs.docker.com/compose/install/)
+- [Composer]
 
 Setting up your development environment on your local machine :
 ```
-$ git clone https://github.com/ehsanmnz/laravel-course-demo.git
-$ cd laravel-course-demo
+$ git clone https://github.com/behnamhoseyni/php_210.git
+$ cd php_210
 $ cp .env.example .env
-$ docker-compose run --rm --no-deps blog-server composer install
-$ docker-compose run --rm --no-deps blog-server php artisan key:generate
-$ docker-compose run --rm --no-deps blog-server php artisan vendor:publish --provider="Laravel\Horizon\HorizonServiceProvider"
-$ docker-compose run --rm --no-deps blog-server php artisan storage:link
-$ docker run --rm -it -v $(pwd):/app -w /app node npm install
-$ docker-compose up -d
-```
 
 Now you can access the application via [http://localhost:8000](http://localhost:8000).
 
