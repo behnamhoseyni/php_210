@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAdminsTable extends Migration
+class CreateManuFacturesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,18 +13,13 @@ class CreateAdminsTable extends Migration
      */
     public function up()
     {
-        Schema::create('tbl_admin', function (Blueprint $table) {
+        Schema::create('manu_factures', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('admin_email');
-            $table->string('admin_password');
-            $table->string('admin_name');
-            $table->bigInteger('admin_phone');
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->string('manufacture_name');
+            $table->string('manufacture_description');
+            $table->integer('publication_status');
             $table->timestamps();
-
         });
-
-        
     }
 
     /**
@@ -34,6 +29,6 @@ class CreateAdminsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('admins');
+        Schema::dropIfExists('manu_factures');
     }
 }

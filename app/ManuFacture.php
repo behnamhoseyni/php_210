@@ -4,15 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Category extends Model
+class ManuFacture extends Model
 {
-	
-    protected $table = 'Categories';
-
+     protected $table = 'manu_factures';
+        protected $gurded = ['manufacture_id'];
+        
     public function Product()
     {
         return $this->hasMany(Product::class);
  
     }
-
 }

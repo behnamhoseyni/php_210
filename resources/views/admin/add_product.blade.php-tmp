@@ -5,7 +5,7 @@
 				<li>
 					<i class="icon-home"></i>
 					<a href="{{URL::to('/admin/dashboard')}}">پیشخوان</a>
-					<i class="icon-angle-right"></i> 
+					<i class="icon-angle-right"></i>
 				</li>
 				<li>
 					<i class="icon-edit"></i>
@@ -13,18 +13,18 @@
 				</li>
 			</ul>
 
-				<?php 
-						// Alert for success add new Product
-							if (Session::get('msg')) {
-								echo '<p class="alert alert-success">';
-								echo Session::get('msg');
-								echo '</p>';
+<?php
+// Alert for success add new Product
+if (Session::get('msg')) {
+	echo '<p class="alert alert-success">';
+	echo Session::get('msg');
+	echo '</p>';
 
-								Session::put('msg',null);
-							}
-						?>
-						
-			
+	Session::put('msg', null);
+}
+?>
+
+
 			<div class="row-fluid sortable">
 				<div class="box span12">
 					<div class="box-header" data-original-title>
@@ -35,7 +35,7 @@
 							<a href="#" class="btn-close"><i class="halflings-icon remove"></i></a>
 						</div>
 					</div>
-					
+
 					<div class="box-content">
 						<form class="form-horizontal" action="{{URL::to('/admin/product/save')}}" method="POST" enctype="multipart/form-data" >
 							{{csrf_field()}}
@@ -47,7 +47,7 @@
 								<input type="text" class="input-xlarge" id="product_name" name="product_name">
 							  </div>
 							</div>
-   
+
 							<div class="control-group hidden-phone">
 							  <label class="control-label" for="product_long_description">توضیحات کامل </label>
 							  <div class="controls">
@@ -127,13 +127,13 @@
 							  <button type="reset" class="btn">انصراف</button>
 							</div>
 						  </fieldset>
-						</form>   
+						</form>
 
 					</div>
 				</div><!--/span-->
 
 			</div><!--/row-->
 
-			
-    
+
+
 @endsection

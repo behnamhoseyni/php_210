@@ -64,10 +64,24 @@ Route::post('Categoryupdate/{id}',[
 	'uses' => 'CategoryController@update',
 	'as'   => 'Category.update'
 ]);
-
-
-
-
-
-
 //______________EndCategory___________________________
+//______________startmanufacture___________________________
+
+Route::get('/admin/manufacture/add','ManuFacturesController@add');
+Route::post('/admin/manufacture/save','ManuFacturesController@save');
+Route::get('/admin/manufacture/all','ManuFacturesController@all');
+Route::get('/admin/manufacture/{id}/delete','ManuFacturesController@delete');	
+Route::get('/admin/manufacture/{id}/active','ManuFacturesController@active');
+Route::get('/admin/manufacture/{id}/unactive','ManuFacturesController@unactive');
+Route::get('/admin/manufacture/{id}/update','ManuFacturesController@update');
+Route::post('/admin/manufacture/{id}/update/done','ManuFacturesController@update_done');
+             
+//______________Endmanufacture___________________________
+//______________Startproduct___________________________
+Route::get('/admin/product/add','ProductController@add');
+Route::post('/admin/product/save','ProductController@save');
+Route::get('/admin/product/all','ProductController@all');
+Route::get('/admin/product/{id}/unactive','ProductController@unactive');
+Route::get('/admin/product/{id}/active','ProductController@active');
+Route::get('/admin/product/{id}/delete','ProductController@delete');
+//______________Endproduct___________________________
