@@ -8,7 +8,10 @@ Route::get('/',[
 ]);
 //ــــــــــــــــــــــــــــــــــــــــــــــــBackEnd_________________________________
 
-
+Route::get('well',[
+	'uses' => 'homeController@well',
+	'as'   => 'home.index'
+]);
 //______________StartAdmin_______________________________
 Route::get('/admin',[
 	"uses" =>'adminsController@login',
@@ -18,8 +21,6 @@ Route::get('/admin',[
 Route::match(['get', 'post'],'/admin/dashboard',[
 	"uses" =>'adminsController@dashboard',
 	"as"   =>'admins.dashboard',
-	"Middelware" => 'admin'
-
 ]);
 
 Route::get('/logout',[
@@ -33,7 +34,10 @@ Route::get('/logout',[
 ]);
 //______________Category___________________________
 
-Route::get('/admin/category/add','CategoryController@add'); 
+Route::get('/admin/category/add',[
+	"uses" =>'CategoryController@add',
+	]); 
+
 Route::get('/admin/category/all','CategoryController@all_categories');
 Route::post('/admi/save_new_category',[
 	'uses' => 'CategoryController@save_category',

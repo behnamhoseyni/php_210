@@ -16,6 +16,13 @@ class AdminMiddlware
      */
     public function handle($request, Closure $next)
     {
-        return $next($request);
+        $admin_auth_email = Session::get('admin_email');
+        if ($admin_auth_email) {
+           return;
+        }else
+        {
+            session::put('msg','for access here you must login first ');
+            return Redirect::to('/admin')->send();
+        }
     }
 }

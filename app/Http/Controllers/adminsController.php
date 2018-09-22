@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Admin;
 use Session;
 
-session_start();
+
 
 class adminsController extends Controller
 {
@@ -28,7 +28,6 @@ class adminsController extends Controller
     public function dashboard(Request $request)
     {
         if (session::get('admin_email') ) {
-
             return View ('admin.dashboard');
         }
 
@@ -63,7 +62,12 @@ class adminsController extends Controller
     }
     public function login()
     {   
+        if (session::get('admin_email') ) {
+            return View ('admin.dashboard');
+        }
+        else{  
         return View ('admin.login');
+        }
     }
 
     public function logout()

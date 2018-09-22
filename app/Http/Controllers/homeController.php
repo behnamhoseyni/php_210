@@ -3,9 +3,23 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Product;
+use App\Models\Category;
+use App\Models\ManuFacture; 
 
 class homeController extends Controller
 {
+
+      protected $Category;
+    protected $ManuFacture;
+    protected $Product;
+
+    public function  __construct(Category $Category,ManuFacture $ManuFacture,Product $Product)
+    {
+        $this->Category=$Category;
+        $this->ManuFacture=$ManuFacture;
+        $this->Product=$Product;        
+    }
     /**
      * Display a listing of the resource.
      *
@@ -13,72 +27,12 @@ class homeController extends Controller
      */
     public function index()
     {
-       return  view('pages.home');
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+        $Categories=$this->Category->all();
+        $ManuFactures=$this->ManuFacture->all();
+        $Productes=$this->Product
+        ->limit(6)
+        ->get();
+       return  view('pages.home',compact('ManuFactures','Categories','Productes'));
     }
 }
+   

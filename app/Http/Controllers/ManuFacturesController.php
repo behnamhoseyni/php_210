@@ -16,7 +16,7 @@ class ManuFacturesController extends Controller
 
     public function save(Request $request)
     {   
-      
+      SuperAdminController::AdminAuthCheck();
      	if($request->publication_status=='on'){
     		$publication_status=1;
     	}else{
@@ -34,6 +34,8 @@ class ManuFacturesController extends Controller
 
     public function add()
     {
+      
+   SuperAdminController::AdminAuthCheck();
     return view('admin.add_manufacture'); 
           
     }
@@ -43,12 +45,14 @@ class ManuFacturesController extends Controller
 
     public function all()
     {
+      SuperAdminController::AdminAuthCheck();
        $ManuFacture= $this->ManuFacture->all();
        return view('admin.all_manufactures',compact('ManuFacture'));
     }
 
     public function Active($id)
     {
+      SuperAdminController::AdminAuthCheck();
        $ManuFacture= $this->ManuFacture->find($id);
        $ManuFacture-> publication_status =1;
        $ManuFacture->save();
@@ -57,6 +61,7 @@ class ManuFacturesController extends Controller
 
     public function unactive($id)
     {
+      SuperAdminController::AdminAuthCheck();
        $ManuFacture= $this->ManuFacture->find($id);
        $ManuFacture-> publication_status =0;
        $ManuFacture->save();
@@ -65,6 +70,7 @@ class ManuFacturesController extends Controller
 
     public function update($id)
     {          
+      SuperAdminController::AdminAuthCheck();
     $ManuFacture= $this->ManuFacture->find($id);
     return view('admin.edit_manufacture',compact('ManuFacture'));
 
@@ -72,6 +78,7 @@ class ManuFacturesController extends Controller
 
     public function delete($id)
     {
+      SuperAdminController::AdminAuthCheck();
       $ManuFacture=$this->ManuFacture->find($id);
       $ManuFacture->delete();
               return redirect('/admin/manufacture/all');
@@ -80,7 +87,7 @@ class ManuFacturesController extends Controller
 
     public function update_done(Request $request,$id )
     {
-
+      SuperAdminController::AdminAuthCheck();
       if($request->publication_status=='on'){
         $publication_status=1;
       }else{

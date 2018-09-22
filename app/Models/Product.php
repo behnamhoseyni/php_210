@@ -7,19 +7,19 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
      protected $table = 'products';
-        protected $gurded = ['id'];
 
     public function categories()
     {
-        return $this->belongto(Category::class);
+        return $this->belongsto(Category::class);
     }
 
-    public function manufactures()
+    public function manu_factures()
     {
-        return $this->belongto(ManuFactures::class);
+        return $this->belongsto(ManuFacture::class);
     }
      public function Admin()
     {
         return $this->hasone(Admin::class);
     }
+
 }

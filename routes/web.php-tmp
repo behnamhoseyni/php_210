@@ -7,6 +7,10 @@ Route::get('/', [
 	]);
 //ــــــــــــــــــــــــــــــــــــــــــــــــBackEnd_________________________________
 
+Route::get('well', [
+		'uses' => 'homeController@well',
+		'as'   => 'home.index'
+	]);
 //______________StartAdmin_______________________________
 Route::get('/admin', [
 		"uses" => 'adminsController@login',

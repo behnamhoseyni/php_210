@@ -9,16 +9,6 @@
 				</li>
 				<li><a href="{{URL::to('/admin/product/all')}}">همه ی محصولات</a></li>
 			</ul>
-         			@if ($errors->any())
-                        <div class="alert alert-danger">
-                         <ul>
-                           @foreach ($ errors->all() as $error)
-                               <li>{{ $error }}</li>
-                           @endforeach
-                         </ul>
-                       </div>
-                   @endif
-
 						 <?php 
 						// Alert for success add new Product
 							if (Session::get('msg')) {
@@ -55,13 +45,13 @@
 							  </tr>
 						  </thead>   
 						  <tbody>
-						  	@foreach($Product as $product)
+						  	@foreach($Products as $product)
 							<tr>
 								<td>{{ $product->id}}</td>
 								<td class="center">{{ $product->product_name}}</td>
 								<td class="center">{{ $product->product_price}}</td>
-								<td class="center">{{ $product->category_name}}</td>
-								<td class="center">{{ $product->manufacture_name}}</td>
+								<td class="center">{{ $product->categories->category_name}}</td>
+								<td class="center">{{ $product->manu_factures->manufacture_name}}</td>
 								<td class="center">
 									@if($product->publication_status)
 									<span class="label label-success">فعال</span>
@@ -72,8 +62,7 @@
 
 								</td>
 								<td class="center">
-									<img style="height: 100px;width: 100px"
-									 src="{{URL::to($product->product_image)}}">
+									<img style="height: 100px;width: 100px" src="{{URL::to($product->product_image)}}">
 								</td>
 								<td class="center">
 									
