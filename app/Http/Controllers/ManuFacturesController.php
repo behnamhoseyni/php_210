@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\ManuFacture;
-
+use App\Http\Requests\ManuFacturesRequest;
 use Illuminate\Http\Request;
 
 class ManuFacturesController extends Controller
@@ -14,7 +14,7 @@ class ManuFacturesController extends Controller
          $this->ManuFacture=$ManuFacture;
  }
 
-    public function save(Request $request)
+    public function save(ManuFacturesRequest $request)
     {   
       SuperAdminController::AdminAuthCheck();
      	if($request->publication_status=='on'){

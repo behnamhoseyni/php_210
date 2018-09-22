@@ -24,7 +24,7 @@
 							}
 						?>
 						
-			
+					
 			<div class="row-fluid sortable">
 				<div class="box span12">
 					<div class="box-header" data-original-title>
@@ -35,7 +35,13 @@
 							<a href="#" class="btn-close"><i class="halflings-icon remove"></i></a>
 						</div>
 					</div>
-					
+					@if($errors->count())
+					<ul>
+								@foreach($errors->all() as $error)
+									 '<p class="alert alert-success">{{ $error }}</p>
+								@endforeach
+					</ul>
+					@endif
 					<div class="box-content">
 						<form class="form-horizontal" action="{{URL::to('/admin/product/save')}}" method="POST" enctype="multipart/form-data" >
 							{{csrf_field()}}

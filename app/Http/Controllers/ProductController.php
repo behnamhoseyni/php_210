@@ -34,7 +34,7 @@ class ProductController extends Controller
     }
 
 
-    public function save(Request $request)
+    public function save(ProductRequest $request)
     {
         SuperAdminController::AdminAuthCheck();
         if($request->publication_status=='on'){

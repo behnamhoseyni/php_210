@@ -21,7 +21,7 @@ class CategoryController extends Controller
     public function save_category(CategoryRequest $request)
     {   
 
-       
+      SuperAdminController::AdminAuthCheck();  
      //  $this->Category->create($request->only([
        //      'category_name','category_description','publication_status'
          // ]));
@@ -42,6 +42,7 @@ class CategoryController extends Controller
 
     public function add()
     {
+      SuperAdminController::AdminAuthCheck();
     return view('admin.addCategory');       
     }
 
@@ -49,12 +50,14 @@ class CategoryController extends Controller
 
     public function all_categories()
     {
+      SuperAdminController::AdminAuthCheck();
        $Category= $this->Category->all();
        return view('admin.allCategory',compact('Category'));
     }
 
     public function Active($id)
     {
+      SuperAdminController::AdminAuthCheck();
        $Category= $this->Category->find($id);
        $Category-> publication_status =1;
        $Category->save();
@@ -63,6 +66,7 @@ class CategoryController extends Controller
 
     public function Diactive($id)
     {
+      SuperAdminController::AdminAuthCheck();
        $Category= $this->Category->find($id);
        $Category-> publication_status =0;
        $Category->save();
@@ -71,6 +75,7 @@ class CategoryController extends Controller
 
     public function edit($id)
     { 
+      SuperAdminController::AdminAuthCheck();
     $Category= $this->Category->find($id);
     return view('admin.edit_category',compact('Category'));
 
@@ -78,6 +83,7 @@ class CategoryController extends Controller
 
     public function delete($id)
     {
+      SuperAdminController::AdminAuthCheck();
       $category=$this->Category->find($id);
       $category->delete();
               return redirect('/admin/category/all');
@@ -86,6 +92,7 @@ class CategoryController extends Controller
 
     public function update(CategoryRequest $request,$id )
     {
+      SuperAdminController::AdminAuthCheck();
       if($request->publication_status=='on'){
         $publication_status=1;
       }else{

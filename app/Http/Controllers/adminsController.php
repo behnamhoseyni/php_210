@@ -20,10 +20,6 @@ class adminsController extends Controller
     {
         $this->admin=$admin;
     }
-    public function index()
-    {
-
-    }
    
     public function dashboard(Request $request)
     {
@@ -75,12 +71,5 @@ class adminsController extends Controller
 
         Session::flush();
         return view('admin.login');
-    }
-
-
-
-    public function destroy($id)
-    {
-        //
     }
 }

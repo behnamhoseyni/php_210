@@ -12,19 +12,7 @@
 					<a href="{{URL::to('/admin/manufacture/add')}}">افزودن برند</a>
 				</li>
 			</ul>
-
-				<?php 
-						// Alert for success add new Category
-							if (Session::get('msg')) {
-								echo '<p class="alert alert-success">';
-								echo Session::get('msg');
-								echo '</p>';
-
-								Session::put('msg',null);
-							}
-						?>
-						
-			
+					
 			<div class="row-fluid sortable">
 				<div class="box span12">
 					<div class="box-header" data-original-title>
@@ -36,6 +24,15 @@
 						</div>
 					</div>
 					
+					@if($errors->count())
+					<ul>
+								@foreach($errors->all() as $error)
+									 '<p class="alert alert-success">{{ $error }}</p>
+								@endforeach
+					</ul>
+					@endif
+
+
 					<div class="box-content">
 						<form class="form-horizontal" action="{{URL::to('/admin/manufacture/save')}}" method="POST" >
 							{{csrf_field()}}
