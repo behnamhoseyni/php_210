@@ -7,6 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 class Category extends Model
 {
 	
-        protected $table = 'Categories';
-        protected $gurded = ['category_id'];
+    protected $table = 'categories';
+
+    public function Product()
+    {
+        return $this->hasmany(Product::class);
+ 
     }
+
+}
