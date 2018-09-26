@@ -40,14 +40,14 @@
                         ">
 
                          <div class="col-sm-8">
-                                <img style="height: 400px;width: 100%" src="{{URL::to($slider->slider_image)}}" class="girl img-responsive" alt="" />
+                                <img style="width: 100%" src="{{URL::to($slider->slider_image)}}" class="girl img-responsive" alt="" />
                                 <img 
                                 style="width: 200px;height:200px;" 
                                 src="{{URL::to($slider->slider_off_image)}}" class="pricing" alt="" />
                             </div>
 
                             <div class="col-sm-4">
-                                <h1> {{$slider->slider_title}} </h1>
+                                <h1 style="font-family: Vazir;color:black;"> {{$slider->slider_title}} </h1>
                                 <h2>{{html_entity_decode(strip_tags($slider->slider_description))}}</h2>
                                 <a href="{{$slider->slider_link}}" type="button" class="btn btn-default get">{{$slider->slider_button_lable}}</a>
                             </div>

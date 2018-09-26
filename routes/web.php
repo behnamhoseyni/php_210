@@ -1,13 +1,9 @@
 <?php
 
-
-//ــــــــــــــــــــــــــــــــــــــــــــــfrontendــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ
 Route::get('/',[
 	'uses' => 'homeController@index',
 	'as'   => 'home.index'
 ]);
-//ــــــــــــــــــــــــــــــــــــــــــــــــBackEnd_________________________________
-
 Route::get('well',[
 	'uses' => 'homeController@well',
 	'as'   => 'home.index'
@@ -16,7 +12,6 @@ Route::get('well',[
 Route::get('/admin',[
 	"uses" =>'adminsController@login',
 	"as"   =>'admins.login'
-
 ]);
 Route::match(['get', 'post'],'/admin/dashboard',[
 	"uses" =>'adminsController@dashboard',
@@ -94,3 +89,12 @@ Route::get('/admin/slider/{slider_id}/active','SliderController@active');
 Route::get('/admin/slider/{slider_id}/unactive','SliderController@unactive');
 Route::get('/admin/slider/{slider_id}/delete','SliderController@delete');
 //______________Endslider___________________________
+Route::get('/category/{id}/{category_name}', 'HomeController@displayCategoryProducts');
+Route::get('/brand/{id}/{manufacture_name}', 'HomeController@displayManufactureProducts');
+Route::get('/product/{id}/{product_name}', 'HomeController@displayProductDetails');
+Route::post('/cart/add', 'CartController@add');
+Route::get('/cart', 'CartController@cart');
+Route::get('/cart/delete/item/{id}','CartController@delete');
+Route::get('/cart/{id}/increment','CartController@increment');
+Route::get('/cart/{id}/decrement','CartController@decrement');
+ 

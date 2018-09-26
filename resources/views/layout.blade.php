@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Home | E-Shopper</title>
+    <title>صفحه اصلی | M|shop</title>
     <link href="{{asset('frontend/css/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{asset('frontend/css/bootstrap-rtl.min.css')}}" rel="stylesheet">
     <link href="{{asset('frontend/css/font-awesome.min.css')}}" rel="stylesheet">
@@ -199,19 +199,30 @@ body{
     <section>
         <div class="container">
             <div class="row">
+            
                 <div class="col-sm-3">
                     <div class="left-sidebar">
+                    @if(!empty($Categories))
                         <h2>Category</h2>
                         <div class="panel-group category-products" id="accordian">
                             <!--category-productsr-->
 
-                            @foreach ($Categories as $Category)
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                <h4 class="panel-title"><a href="#">{{$Category->category_name}}</a></h4>
-                                </div>
+                              
+                    @foreach($Categories as $category)
+                    @if($category->publication_status)
+                    <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a 
+                                    href="{{URL::to(
+                                        '/category/'.$category->id."/".$category->category_name)}}" >
+                                    {{$category->category_name}}
+                                </a></h4>
                             </div>
-                            @endforeach()
+                    </div>
+                    @endif
+                     @endforeach
+ 
                         </div><!--/category-products-->
                     
                         <div class="brands_products"><!--brands_products-->
@@ -219,7 +230,8 @@ body{
                             <div class="brands-name">
                                 <ul class="nav nav-pills nav-stacked">
                                         @foreach ($ManuFactures as $ManuFacture)
-                                         <li><a href="#"> <span class="pull-right">{{$ManuFacture->manufacture_name}}</a></li>
+                                         <li><a href="{{URL::to(
+                                    '/brand/'.$ManuFacture->id."/".$ManuFacture->manufacture_name)}}"> <span class="pull-right">{{$ManuFacture->manufacture_name}}</a></li>
                                         @endforeach()    
                                 </ul>
                             </div>
@@ -236,13 +248,13 @@ body{
                         <div class="shipping text-center"><!--shipping-->
                             <img src="images/home/shipping.jpg" alt="" />
                         </div><!--/shipping-->
-                    
+                    @endif
                     </div>
                 </div>
                 
                 <div class="col-sm-9 padding-right">
                     <div class="features_items"><!--features_items-->
-                      @yield('features-items')
+                      @yield('feature-items')
                              </div><!--features_items-->
 
                              <div class="category-tab"><!--category-tab-->
@@ -512,14 +524,12 @@ body{
         </div>
         
     </footer><!--/Footer-->
-    
 
-  
-    <script src="js/jquery.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.scrollUp.min.js"></script>
-    <script src="js/price-range.js"></script>
-    <script src="js/jquery.prettyPhoto.js"></script>
-    <script src="js/main.js"></script>
+    <script src="{{asset("frontend/js/jquery.js")}}"></script>
+    <script src="{{asset("frontend/js/bootstrap.min.js")}}"></script>
+    <script src="{{asset("frontend/js/jquery.scrollUp.min.js")}}"></script>
+    <script src="{{asset("frontend/js/price-range.js")}}"></script>
+    <script src="{{asset("frontend/js/jquery.prettyPhoto.js")}}"></script>
+    <script src="{{asset("frontend/js/main.js")}}"></script>
 </body>
 </html>

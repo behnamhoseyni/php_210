@@ -1,21 +1,21 @@
 @extends('layout')
-@section('features-items')
+@section('feature-items')
   <h2 class="title text-center">Features Items</h2>
-            @foreach ($Productes as $Product)
+            @foreach ($Productes as $product)
                         <div class="col-sm-4">
                             <div class="product-image-wrapper">
                                 <div class="single-products">
                                         <div class="productinfo text-center">
-                                            <img style="height: 300px; width: 200px;" src="{{URL::to($Product->product_image)}}" alt="" />
-                                            <h2>${{$Product->product_price}}</h2>
-                                            <p>{{$Product->product_name}}</p>
-                                            <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                                        </div>
+                                            <img style="height: 300px; width: 200px;" src="{{URL::to($product->product_image)}}" alt="" />
+                                            <h2>${{$product->product_price}}</h2>
+                                            <p>{{$product->product_name}}</p>
+                                            @include('items.btn_add_cart_once')
+                                         </div>
                                         <div class="product-overlay">
                                             <div class="overlay-content">
-                                                <h2>${{$Product->product_price}}</h2>
-                                                <p>{{$Product->product_name}}</p>
-                                                <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                                <h2>${{$product->product_price}}</h2>
+                                                <p>{{$product->product_name}}</p>
+                                          @include('items.btn_add_cart_once')
                                             </div>
                                         </div>
                                 </div>

@@ -1,7 +1,7 @@
 <ul>
-@foreach($Product as $Produc)
+@foreach($product_details as $Produc)
 <li>
-                   {{ $Produc->manu_factures }}
+                   {{ $Produc->product_name }}
 </li>                   
       @endforeach()
 </ul>      
