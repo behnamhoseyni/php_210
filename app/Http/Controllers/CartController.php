@@ -180,7 +180,6 @@ class CartController extends Controller
 
     public function finalStep($payment_method)
     {
-
         // ------------- payment table -----------
         $payment_data = array();
         $payment_data['payment_method'] = $payment_method;
