@@ -4,11 +4,8 @@ Route::get('/',[
 	'uses' => 'homeController@index',
 	'as'   => 'home.index'
 ]);
-<<<<<<< HEAD
-=======
 //ــــــــــــــــــــــــــــــــــــــــــــــــBackEnd_________________________________
 
->>>>>>> 888e1c0dfa0ed95ffd37ced857bda0f4ae3bf8fd
 Route::get('well',[
 	'uses' => 'homeController@well',
 	'as'   => 'home.index'
@@ -124,6 +121,5 @@ Route::post('/cart/payment/do', 'CartController@do_payment');
 Route::get('/payment/zarinpal/callback', 'CartController@zarinpalCallback')->name('payment.zarinpal.callback');
 Route::get('/cart/success', 'CartController@success');
 //______________EndShipping__________________________
-=======
+
 //______________Endslider___________________________
->>>>>>> 888e1c0dfa0ed95ffd37ced857bda0f4ae3bf8fd
