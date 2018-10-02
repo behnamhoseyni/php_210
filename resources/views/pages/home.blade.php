@@ -6,7 +6,7 @@
                             <div class="product-image-wrapper">
                                 <div class="single-products">
                                         <div class="productinfo text-center">
-                                            <img style="height: 300px; width: 200px;" src="{{URL::to($product->product_image)}}" alt="" />
+                                            <img style="height: 200px; width: 200px;" src="{{URL::to($product->product_image)}}" alt="" />
                                             <h2>${{$product->product_price}}</h2>
                                             <p>{{$product->product_name}}</p>
                                             @include('items.btn_add_cart_once')

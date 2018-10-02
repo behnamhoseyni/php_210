@@ -97,4 +97,24 @@ Route::get('/cart', 'CartController@cart');
 Route::get('/cart/delete/item/{id}','CartController@delete');
 Route::get('/cart/{id}/increment','CartController@increment');
 Route::get('/cart/{id}/decrement','CartController@decrement');
- 
+//______________checkout & Login___________________________
+Route::get('/cart/checkout', 'CartController@checkout');
+Route::get('/customer/auth', 'CustomerController@auth');
+Route::post('/customer/register', 'CustomerController@register');
+Route::post('/customer/login', 'CustomerController@login');
+Route::get('/customer/logout', 'CustomerController@logout');
+//______________Endcheckout & Login___________________________
+//______________Shipping___________________________
+Route::post('/cart/shipping/save', 'CartController@save_shipping');
+Route::get('/cart/payment', 'CartController@payment');
+Route::post('/cart/payment/do', 'CartController@do_payment');
+Route::get('/payment/zarinpal/callback', 'CartController@zarinpalCallback')->name('payment.zarinpal.callback');
+Route::get('/cart/success', 'CartController@success');
+Route::post('/search/keyword/', 'SearchController@keyword');
+Route::get('/wishlist/all', 'WishlistController@all');
+Route::get('/wishlist/add/{customer_id}/product/id/{product_id}', 'WishlistController@add');
+Route::get('/wishlist/remove/{wishlist_id}', 'WishlistController@remove');
+Route::post('/cart/payment/do', 'CartController@do_payment');
+Route::get('/payment/zarinpal/callback', 'CartController@zarinpalCallback')->name('payment.zarinpal.callback');
+Route::get('/cart/success', 'CartController@success');
+//______________EndShipping__________________________

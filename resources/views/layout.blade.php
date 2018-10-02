@@ -81,8 +81,8 @@ body{
                     <div class="col-sm-6">
                         <div class="contactinfo">
                             <ul class="nav nav-pills">
-                                <li><a href="#"><i class="fa fa-phone"></i> +2 95 01 88 821</a></li>
-                                <li><a href="#"><i class="fa fa-envelope"></i> info@domain.com</a></li>
+                                <li><a href="#"><i class="fa fa-phone"></i> 0910 775 0554</a></li>
+                                <li><a href="#"><i class="fa fa-envelope"></i> Email@M.com</a></li>
                             </ul>
                         </div>
                     </div>
@@ -109,37 +109,21 @@ body{
                             <a href="index.html"><img src="images/home/logo.png" alt="" /></a>
                         </div>
                         <div class="btn-group pull-right">
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-default dropdown-toggle usa" data-toggle="dropdown">
-                                    USA
-                                    <span class="caret"></span>
-                                </button>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">Canada</a></li>
-                                    <li><a href="#">UK</a></li>
-                                </ul>
-                            </div>
                             
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-default dropdown-toggle usa" data-toggle="dropdown">
-                                    DOLLAR
-                                    <span class="caret"></span>
-                                </button>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">Canadian Dollar</a></li>
-                                    <li><a href="#">Pound</a></li>
-                                </ul>
-                            </div>
                         </div>
                     </div>
                     <div class="col-sm-8">
                         <div class="shop-menu pull-right">
                             <ul class="nav navbar-nav">
-                                <li><a href="#"><i class="fa fa-user"></i> Account</a></li>
-                                <li><a href="#"><i class="fa fa-star"></i> Wishlist</a></li>
-                                <li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li>
-                                <li><a href="cart.html"><i class="fa fa-shopping-cart"></i> Cart</a></li>
-                                <li><a href="login.html"><i class="fa fa-lock"></i> Login</a></li>
+                                <li><a href="#"><i class="fa fa-star"></i> لیست علاقه مندی ها</a></li>
+                                <li><a href="{{url::to('/cart/checkout')}}"><i class="fa fa-crosshairs"></i> فاکتور خرید</a></li>
+                                <li><a href="{{url::to('/cart')}}"><i class="fa fa-shopping-cart"></i> سبد خرید</a></li>
+
+                                @if (Session::get('customer_id'))
+                                 <li><a href="{{url::to('/customer/logout')}}"><i class="fa fa-lock"></i> خروج</a></li>
+                                @else
+                                <li><a href="{{url::to('/customer/auth')}}"><i class="fa fa-lock"></i> ورود</a></li>
+                                @endif
                             </ul>
                         </div>
                     </div>
@@ -161,24 +145,8 @@ body{
                         </div>
                         <div class="mainmenu pull-left">
                             <ul class="nav navbar-nav collapse navbar-collapse">
-                                <li><a href="index.html" class="active">Home</a></li>
-                                <li class="dropdown"><a href="#">Shop<i class="fa fa-angle-down"></i></a>
-                                    <ul role="menu" class="sub-menu">
-                                        <li><a href="shop.html">Products</a></li>
-                                        <li><a href="product-details.html">Product Details</a></li> 
-                                        <li><a href="checkout.html">Checkout</a></li> 
-                                        <li><a href="cart.html">Cart</a></li> 
-                                        <li><a href="login.html">Login</a></li> 
-                                    </ul>
-                                </li> 
-                                <li class="dropdown"><a href="#">Blog<i class="fa fa-angle-down"></i></a>
-                                    <ul role="menu" class="sub-menu">
-                                        <li><a href="blog.html">Blog List</a></li>
-                                        <li><a href="blog-single.html">Blog Single</a></li>
-                                    </ul>
-                                </li> 
-                                <li><a href="404.html">404</a></li>
-                                <li><a href="contact-us.html">Contact</a></li>
+                                <li><a href="{{url::to('/')}}" class="active">صفحه اصلی</a></li>
+                                <li><a href="contact-us.html">تماس با ما</a></li>
                             </ul>
                         </div>
                     </div>
@@ -199,10 +167,9 @@ body{
     <section>
         <div class="container">
             <div class="row">
-            
                 <div class="col-sm-3">
+                @if(!empty($Categories))
                     <div class="left-sidebar">
-                    @if(!empty($Categories))
                         <h2>Category</h2>
                         <div class="panel-group category-products" id="accordian">
                             <!--category-productsr-->
