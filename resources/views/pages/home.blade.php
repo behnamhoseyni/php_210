@@ -1,11 +1,16 @@
 @extends('layout')
 @section('feature-items')
   <h2 class="title text-center">Features Items</h2>
+<<<<<<< HEAD
             @foreach ($Productes as $product)
+=======
+            @foreach ($Productes as $Product)
+>>>>>>> 888e1c0dfa0ed95ffd37ced857bda0f4ae3bf8fd
                         <div class="col-sm-4">
                             <div class="product-image-wrapper">
                                 <div class="single-products">
                                         <div class="productinfo text-center">
+<<<<<<< HEAD
                                             <img style="height: 200px; width: 200px;" src="{{URL::to($product->product_image)}}" alt="" />
                                             <h2>${{$product->product_price}}</h2>
                                             <p>{{$product->product_name}}</p>
@@ -16,6 +21,18 @@
                                                 <h2>${{$product->product_price}}</h2>
                                                 <p>{{$product->product_name}}</p>
                                           @include('items.btn_add_cart_once')
+=======
+                                            <img style="height: 300px; width: 200px;" src="{{URL::to($Product->product_image)}}" alt="" />
+                                            <h2>${{$Product->product_price}}</h2>
+                                            <p>{{$Product->product_name}}</p>
+                                            <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                        </div>
+                                        <div class="product-overlay">
+                                            <div class="overlay-content">
+                                                <h2>${{$Product->product_price}}</h2>
+                                                <p>{{$Product->product_name}}</p>
+                                                <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+>>>>>>> 888e1c0dfa0ed95ffd37ced857bda0f4ae3bf8fd
                                             </div>
                                         </div>
                                 </div>

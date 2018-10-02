@@ -4,6 +4,11 @@ Route::get('/',[
 	'uses' => 'homeController@index',
 	'as'   => 'home.index'
 ]);
+<<<<<<< HEAD
+=======
+//ــــــــــــــــــــــــــــــــــــــــــــــــBackEnd_________________________________
+
+>>>>>>> 888e1c0dfa0ed95ffd37ced857bda0f4ae3bf8fd
 Route::get('well',[
 	'uses' => 'homeController@well',
 	'as'   => 'home.index'
@@ -88,6 +93,7 @@ Route::post('/admin/slider/save','SliderController@save');
 Route::get('/admin/slider/{slider_id}/active','SliderController@active');
 Route::get('/admin/slider/{slider_id}/unactive','SliderController@unactive');
 Route::get('/admin/slider/{slider_id}/delete','SliderController@delete');
+<<<<<<< HEAD
 //______________Endslider___________________________
 Route::get('/category/{id}/{category_name}', 'HomeController@displayCategoryProducts');
 Route::get('/brand/{id}/{manufacture_name}', 'HomeController@displayManufactureProducts');
@@ -118,3 +124,6 @@ Route::post('/cart/payment/do', 'CartController@do_payment');
 Route::get('/payment/zarinpal/callback', 'CartController@zarinpalCallback')->name('payment.zarinpal.callback');
 Route::get('/cart/success', 'CartController@success');
 //______________EndShipping__________________________
+=======
+//______________Endslider___________________________
+>>>>>>> 888e1c0dfa0ed95ffd37ced857bda0f4ae3bf8fd

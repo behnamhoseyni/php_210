@@ -27,7 +27,11 @@
 					@if($errors->count())
 					<ul>
 								@foreach($errors->all() as $error)
+<<<<<<< HEAD:resources/views/admin/add_manufacture.blade.php
 									 <p class="alert alert-success">{{ $error }}</p>
+=======
+									 '<p class="alert alert-success">{{ $error }}</p>
+>>>>>>> 888e1c0dfa0ed95ffd37ced857bda0f4ae3bf8fd:resources/views/admin/add_manufacture.blade.php
 								@endforeach
 					</ul>
 					@endif

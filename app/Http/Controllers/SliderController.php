@@ -8,8 +8,11 @@ use DB;
 use Illuminate\Support\Facades\Redirect;
 use Session;
 use App\Models\slider;
+<<<<<<< HEAD
 use App\Http\Requests\sliderRequest;
 
+=======
+>>>>>>> 888e1c0dfa0ed95ffd37ced857bda0f4ae3bf8fd
 
 
 class SliderController extends Controller
@@ -33,7 +36,11 @@ class SliderController extends Controller
    		return View('admin.add_slider'); 	
     }
 
+<<<<<<< HEAD
     public function save(sliderRequest $request)
+=======
+    public function save(Request $request)
+>>>>>>> 888e1c0dfa0ed95ffd37ced857bda0f4ae3bf8fd
     {
         SuperAdminController::AdminAuthCheck();
 

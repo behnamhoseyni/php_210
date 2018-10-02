@@ -13,7 +13,11 @@ class ManuFacturesRequest extends FormRequest
      */
     public function authorize()
     {
+<<<<<<< HEAD
         return true;
+=======
+        return false;
+>>>>>>> 888e1c0dfa0ed95ffd37ced857bda0f4ae3bf8fd
     }
 
     /**

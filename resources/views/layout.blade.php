@@ -174,6 +174,7 @@ body{
                         <div class="panel-group category-products" id="accordian">
                             <!--category-productsr-->
 
+<<<<<<< HEAD
                               
                     @foreach($Categories as $category)
                     @if($category->publication_status)
@@ -190,6 +191,15 @@ body{
                     @endif
                      @endforeach
  
+=======
+                            @foreach ($Categories as $Category)
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                <h4 class="panel-title"><a href="#">{{$Category->category_name}}</a></h4>
+                                </div>
+                            </div>
+                            @endforeach()
+>>>>>>> 888e1c0dfa0ed95ffd37ced857bda0f4ae3bf8fd
                         </div><!--/category-products-->
                     
                         <div class="brands_products"><!--brands_products-->
@@ -197,8 +207,12 @@ body{
                             <div class="brands-name">
                                 <ul class="nav nav-pills nav-stacked">
                                         @foreach ($ManuFactures as $ManuFacture)
+<<<<<<< HEAD
                                          <li><a href="{{URL::to(
                                     '/brand/'.$ManuFacture->id."/".$ManuFacture->manufacture_name)}}"> <span class="pull-right">{{$ManuFacture->manufacture_name}}</a></li>
+=======
+                                         <li><a href="#"> <span class="pull-right">{{$ManuFacture->manufacture_name}}</a></li>
+>>>>>>> 888e1c0dfa0ed95ffd37ced857bda0f4ae3bf8fd
                                         @endforeach()    
                                 </ul>
                             </div>
