@@ -14,6 +14,7 @@ Development environment requirements :
 
 https://github.com/Crinsane/LaravelShoppingcart
   - [composer require gloudemans/shoppingcart]
+  
 https://packagist.org/packages/zarinpal/zarinpal
   - [composer require zarinpal/zarinpal]
 
