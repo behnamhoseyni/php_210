@@ -12,6 +12,8 @@
 Development environment requirements :
 - [Composer]
 
+## How to install and use zarrinpall & laravel shopping cart:
+
 https://github.com/Crinsane/LaravelShoppingcart
   - [composer require gloudemans/shoppingcart]
   
