@@ -12,6 +12,12 @@
 Development environment requirements :
 - [Composer]
 
+https://github.com/Crinsane/LaravelShoppingcart
+  - [composer require gloudemans/shoppingcart]
+https://packagist.org/packages/zarinpal/zarinpal
+  - [composer require zarinpal/zarinpal]
+
+
 Setting up your development environment on your local machine :
 ```
 $ git clone https://github.com/behnamhoseyni/php_210.git
