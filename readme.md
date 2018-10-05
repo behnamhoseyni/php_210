@@ -12,6 +12,12 @@
 Development environment requirements :
 - [Composer]
 
+Setting up your development environment on your local machine :
+```
+$ git clone https://github.com/behnamhoseyni/php_210.git
+$ cd php_210
+$ cp .env.example .env
+
 ## How to install and use zarrinpall & laravel shopping cart:
 
 https://github.com/Crinsane/LaravelShoppingcart
@@ -19,14 +25,7 @@ https://github.com/Crinsane/LaravelShoppingcart
   
 https://packagist.org/packages/zarinpal/zarinpal
   - [composer require zarinpal/zarinpal]
-
-
-Setting up your development environment on your local machine :
-```
-$ git clone https://github.com/behnamhoseyni/php_210.git
-$ cd php_210
-$ cp .env.example .env
-
+  
 Now you can access the application via [http://localhost:8000](http://localhost:8000).
 
 There is no need to run ```php artisan serve```.
