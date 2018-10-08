@@ -7,6 +7,8 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
 
+<p align="center">PHP_210 M-Shop</p>
+
 ## Installation
 
 Development environment requirements :
